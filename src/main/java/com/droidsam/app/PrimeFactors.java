@@ -3,22 +3,25 @@ package com.droidsam.app;
 public class PrimeFactors {
     public static int[] of(int input) {
 
-        if (input % 2 == 0 && input > 2) {
-            return join(new int[]{2}, of(input / 2));
+        int[] result = new int[0];
+
+        if (input == 1) {
+            return new int[]{1};
         }
 
-        if (input % 3 == 0 && input > 3) {
-            return join(new int[]{3}, of(input / 3));
+        int primeCandidate = 2;
+        while (input >= primeCandidate) {
+            if (input % primeCandidate == 0) {
+                input = input / primeCandidate;
+                result = join(result, new int[]{primeCandidate});
+                if (input > 1) {
+                    return join(result, of(input));
+                }
+            }
+            primeCandidate++;
         }
-        if (input % 7 == 0 && input > 7) {
-            return join(new int[]{7}, of(input / 7));
-        }
+        return result;
 
-        if (input % 11 == 0 && input > 11) {
-            return join(new int[]{11}, of(input / 11));
-        }
-
-        return new int[]{input};
     }
 
     private static int[] join(int[] array1, int[] array2) {
