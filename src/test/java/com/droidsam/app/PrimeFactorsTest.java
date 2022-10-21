@@ -12,4 +12,12 @@ public class PrimeFactorsTest {
 
         Assertions.assertArrayEquals(expectedResult, PrimeFactors.of(input));
     }
+
+    @Test
+    public void shouldReturnAnArrayContainingTwoWhenInputIsTwo(){
+        int input = 2;
+        int [] expectedResult = {2};
+
+        Assertions.assertArrayEquals(expectedResult, PrimeFactors.of(input));
+    }
 }
