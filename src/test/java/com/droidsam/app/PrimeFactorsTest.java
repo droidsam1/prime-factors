@@ -16,7 +16,9 @@ public class PrimeFactorsTest {
                 Arguments.of(3, new int[]{3}),
                 Arguments.of(4, new int[]{2,2}),
                 Arguments.of(5, new int[]{5}),
-                Arguments.of(6, new int[]{2,3})
+                Arguments.of(6, new int[]{2,3}),
+                Arguments.of(7, new int[]{7}),
+                Arguments.of(8, new int[]{2,2,2})
 
         );
     }
