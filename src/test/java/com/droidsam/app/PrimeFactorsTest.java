@@ -30,6 +30,9 @@ public class PrimeFactorsTest {
                 Arguments.of(60, new int[]{2,2,3,5}),
                 Arguments.of(91, new int[]{7,13}),
                 Arguments.of(121, new int[]{11,11}),
+                Arguments.of(164, new int[]{2,2,41}),
+                Arguments.of(187, new int[]{11,17}),
+                Arguments.of(199, new int[]{199}),
                 Arguments.of(1911, new int[]{3,7,7,13})
 
 
