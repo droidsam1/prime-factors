@@ -14,6 +14,10 @@ public class PrimeFactors {
             return join(new int[]{7}, of(input / 7));
         }
 
+        if (input % 11 == 0 && input > 11) {
+            return join(new int[]{11}, of(input / 11));
+        }
+
         return new int[]{input};
     }
 
