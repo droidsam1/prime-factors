@@ -7,6 +7,10 @@ public class PrimeFactors {
             return join(new int[]{2}, of(input / 2));
         }
 
+        if (input % 3 == 0 && input > 3) {
+            return join(new int[]{3}, of(input / 3));
+        }
+
         return new int[]{input};
     }
 
