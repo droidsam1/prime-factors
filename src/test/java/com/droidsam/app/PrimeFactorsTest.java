@@ -1,10 +1,12 @@
 package com.droidsam.app;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.security.InvalidParameterException;
 import java.util.stream.Stream;
 
 public class PrimeFactorsTest {
@@ -43,5 +45,10 @@ public class PrimeFactorsTest {
     @MethodSource("getPrimeFactorsResultsPairs")
     public void shouldReturnAnArrayContainingOneWhenInputIsOne(int input, int[] expected) {
         Assertions.assertArrayEquals(expected, PrimeFactors.of(input));
+    }
+
+    @Test
+    public void shouldReturErrorIfNumberIsNegative() {
+        Assertions.assertThrows(InvalidParameterException.class, () -> PrimeFactors.of(-1));
     }
 }

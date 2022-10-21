@@ -1,17 +1,23 @@
 package com.droidsam.app;
 
+import java.security.InvalidParameterException;
+
 public class PrimeFactors {
     public static int[] of(int input) {
 
         int[] result = new int[0];
+
+        if (input < 1) {
+            throw new InvalidParameterException("Primes must be greater than 1");
+        }
 
         if (input == 1) {
             return new int[]{1};
         }
 
         for (int primeCandidate = 2; primeCandidate <= input; primeCandidate++) {
-            while (input >= primeCandidate && input % primeCandidate == 0) {
-                input = input / primeCandidate;
+            while (input % primeCandidate == 0) {
+                input /= primeCandidate;
                 result = join(result, new int[]{primeCandidate});
             }
         }
