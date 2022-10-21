@@ -13,7 +13,8 @@ public class PrimeFactorsTest {
         return Stream.of(
                 Arguments.of(1, new int[]{1}),
                 Arguments.of(2, new int[]{2}),
-                Arguments.of(3, new int[]{3})
+                Arguments.of(3, new int[]{3}),
+                Arguments.of(4, new int[]{2,2})
         );
     }
 
