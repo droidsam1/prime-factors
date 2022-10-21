@@ -9,16 +9,11 @@ public class PrimeFactors {
             return new int[]{1};
         }
 
-        int primeCandidate = 2;
-        while (input >= primeCandidate) {
-            if (input % primeCandidate == 0) {
+        for (int primeCandidate = 2; primeCandidate <= input; primeCandidate++) {
+            while (input >= primeCandidate && input % primeCandidate == 0) {
                 input = input / primeCandidate;
                 result = join(result, new int[]{primeCandidate});
-                if (input > 1) {
-                    return join(result, of(input));
-                }
             }
-            primeCandidate++;
         }
         return result;
 
